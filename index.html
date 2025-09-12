@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games: Strategy & Board</title>
+    <link rel="stylesheet" href="static/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">
+                    <i class="fas fa-chess-king"></i>
+                    Mini Games: Strategy & Board
+                </h1>
+                <nav class="nav">
+                    <button class="nav-btn" onclick="showDashboard()">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                    <button class="nav-btn" onclick="toggleSound()">
+                        <i class="fas fa-volume-up" id="sound-icon"></i>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <section class="hero">
+                    <h2>Choose Your Strategy</h2>
+                    <p>Experience classic board games with modern animations and smooth gameplay</p>
+                </section>
+
+                <section class="games-grid">
+                    <!-- Chess -->
+                    <div class="game-card" onclick="loadGame('chess')" data-game="chess">
+                        <div class="game-icon">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <h3>Chess</h3>
+                        <p>Strategic warfare with AI engine</p>
+                        <div class="game-features">
+                            <span class="feature">AI Opponent</span>
+                            <span class="feature">Move Hints</span>
+                        </div>
+                    </div>
+
+                    <!-- Checkers -->
+                    <div class="game-card" onclick="loadGame('checkers')" data-game="checkers">
+                        <div class="game-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Checkers</h3>
+                        <p>Classic draughts with animated jumps</p>
+                        <div class="game-features">
+                            <span class="feature">Turn-Based</span>
+                            <span class="feature">Animations</span>
+                        </div>
+                    </div>
+
+                    <!-- Connect Four -->
+                    <div class="game-card" onclick="loadGame('connect4')" data-game="connect4">
+                        <div class="game-icon">
+                            <i class="fas fa-circle-dot"></i>
+                        </div>
+                        <h3>Connect Four</h3>
+                        <p>Drop pieces and connect to win</p>
+                        <div class="game-features">
+                            <span class="feature">Physics</span>
+                            <span class="feature">AI Player</span>
+                        </div>
+                    </div>
+
+                    <!-- Ludo -->
+                    <div class="game-card" onclick="loadGame('ludo')" data-game="ludo">
+                        <div class="game-icon">
+                            <i class="fas fa-dice"></i>
+                        </div>
+                        <h3>Ludo</h3>
+                        <p>Multiplayer race to the finish</p>
+                        <div class="game-features">
+                            <span class="feature">4 Players</span>
+                            <span class="feature">Dice Roll</span>
+                        </div>
+                    </div>
+
+                    <!-- Monopoly Mini -->
+                    <div class="game-card" onclick="loadGame('monopoly')" data-game="monopoly">
+                        <div class="game-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Monopoly Mini</h3>
+                        <p>Property trading simplified</p>
+                        <div class="game-features">
+                            <span class="feature">Economy</span>
+                            <span class="feature">Properties</span>
+                        </div>
+                    </div>
+
+                    <!-- Battleship -->
+                    <div class="game-card" onclick="loadGame('battleship')" data-game="battleship">
+                        <div class="game-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <h3>Battleship</h3>
+                        <p>Naval strategy and tactics</p>
+                        <div class="game-features">
+                            <span class="feature">Ship Placement</span>
+                            <span class="feature">AI Opponent</span>
+                        </div>
+                    </div>
+
+                    <!-- Reversi -->
+                    <div class="game-card" onclick="loadGame('reversi')" data-game="reversi">
+                        <div class="game-icon">
+                            <i class="fas fa-adjust"></i>
+                        </div>
+                        <h3>Reversi</h3>
+                        <p>Othello with piece flipping</p>
+                        <div class="game-features">
+                            <span class="feature">Strategy</span>
+                            <span class="feature">Flipping</span>
+                        </div>
+                    </div>
+
+                    <!-- Go -->
+                    <div class="game-card" onclick="loadGame('go')" data-game="go">
+                        <div class="game-icon">
+                            <i class="fas fa-circle-notch"></i>
+                        </div>
+                        <h3>Go</h3>
+                        <p>Ancient strategy on 9x9 board</p>
+                        <div class="game-features">
+                            <span class="feature">Territory</span>
+                            <span class="feature">Capture</span>
+                        </div>
+                    </div>
+
+                    <!-- Carrom -->
+                    <div class="game-card" onclick="loadGame('carrom')" data-game="carrom">
+                        <div class="game-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Carrom</h3>
+                        <p>Physics-based flicking game</p>
+                        <div class="game-features">
+                            <span class="feature">Physics</span>
+                            <span class="feature">Flicking</span>
+                        </div>
+                    </div>
+
+                    <!-- Mancala -->
+                    <div class="game-card" onclick="loadGame('mancala')" data-game="mancala">
+                        <div class="game-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Mancala</h3>
+                        <p>Ancient sowing and capturing</p>
+                        <div class="game-features">
+                            <span class="feature">Sowing</span>
+                            <span class="feature">Strategy</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Game Container -->
+    <div id="game-container" class="game-container hidden">
+        <div class="game-header">
+            <button class="back-btn" onclick="showDashboard()">
+                <i class="fas fa-arrow-left"></i> Back to Games
+            </button>
+            <h2 id="game-title">Game Title</h2>
+            <div class="game-controls">
+                <button class="control-btn" onclick="restartGame()">
+                    <i class="fas fa-redo"></i> Restart
+                </button>
+            </div>
+        </div>
+        <div id="game-area" class="game-area">
+            <!-- Individual games will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading" class="loading hidden">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Loading Game...</p>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="move-sound" preload="auto">
+        <source src="static/audio/move.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="capture-sound" preload="auto">
+        <source src="static/audio/capture.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="dice-sound" preload="auto">
+        <source src="static/audio/dice.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="win-sound" preload="auto">
+        <source src="static/audio/win.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="static/js/main.js"></script>
+    <script src="static/js/audio.js"></script>
+    <script src="static/js/game-loader.js"></script>
+</body>
+</html>
